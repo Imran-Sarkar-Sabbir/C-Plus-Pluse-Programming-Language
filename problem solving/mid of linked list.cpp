@@ -19,16 +19,12 @@ public:
         int count = 0, mid = 0;
         while (head)
         {
-            if ((count / 2) != mid)
-            {
-                mid = count / 2;
-                if (mid * 2 != count)
-                    curr = curr->next;
-                curr = curr->next;
-            }
-            head = head->next;
             count++;
+            head = head->next;
         }
+        mid = count / 2;
+        for (int i = 0; i < mid; i++)
+            curr = curr->next;
         return curr;
     }
 };
